@@ -21,10 +21,10 @@ powered by ykpythemind<br>
 
 <main>
 
-  <% target_files.each do |file| %>
+  <% targets.each do |diary| %>
     <article>
-      <h2><%= file.datetime %></h2>
-      <%= ::File.read(file.path) %>
+      <h2><%= diary.datetime %></h2>
+      <%= diary.read_content %>
     </article>
   <% end %>
 </main>
