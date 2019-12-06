@@ -64,6 +64,8 @@ module MonkeyDiary
 
     def execute
       at_tmpdir do |dir|
+        setupgit
+
         git "clone https://#{auth}@#{URL} ."
 
         # 履歴を引き継いでいない空ブランチを作成、
@@ -81,6 +83,11 @@ module MonkeyDiary
     end
 
     private
+
+    def setupgit
+      git 'config --worktree user.name "ykpythemind bot"'
+      git 'config --worktree user.email "yukibukiyou@gmail.com"'
+    end
 
     def git(args)
       puts `git #{args}`
