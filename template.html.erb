@@ -23,7 +23,7 @@ powered by ykpythemind<br>
 
   <% targets.each do |diary| %>
     <article>
-      <h2><%= diary.datetime %></h2>
+      <h2><%= diary.datetime.to_s %></h2>
       <%= diary.read_content %>
     </article>
   <% end %>
