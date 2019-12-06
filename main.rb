@@ -64,9 +64,8 @@ module MonkeyDiary
 
     def execute
       at_tmpdir do |dir|
-        setupgit
-
         git "clone https://#{auth}@#{URL} ."
+        setupgit
 
         # 履歴を引き継いでいない空ブランチを作成、
         git 'checkout --orphan gh-pages'
