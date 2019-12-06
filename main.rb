@@ -74,7 +74,7 @@ module MonkeyDiary
         git 'add .'
         git 'commit -m "ok"'
 
-        git "push https://#{auth}@#{URL} -f -u origin gh-pages"
+        git "push https://#{auth}@#{URL} -f master:gh-pages"
       end
     end
 
@@ -82,7 +82,7 @@ module MonkeyDiary
 
     def git(args)
       puts `git #{args}`
-      raise "git operation failed" if $?.success?
+      raise "git operation failed" unless $?.success?
     end
 
     def at_tmpdir
