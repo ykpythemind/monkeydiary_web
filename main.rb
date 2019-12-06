@@ -66,7 +66,9 @@ module MonkeyDiary
       at_tmpdir do |dir|
         git "clone https://#{auth}@#{URL} ."
 
-        git 'checkout -b gh-pages'
+        # 履歴を引き継いでいない空ブランチを作成、
+        git 'checkout --orphan gh-pages'
+        git 'reset --hard'
 
         FileUtils.cp_r(Pathname.new(@target_dir).glob('**/*'), dir)
         # puts `ls -la #{dir}`
