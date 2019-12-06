@@ -74,7 +74,7 @@ module MonkeyDiary
         git 'add .'
         git 'commit -m "ok"'
 
-        git "push https://#{auth}@#{URL} -f master:gh-pages"
+        git "push https://#{auth}@#{URL} -f gh-pages:gh-pages"
       end
     end
 
