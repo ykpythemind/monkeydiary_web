@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MonkeyDiary</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet">
+  <style>
+    body { text-align: center; }
+    article { margin: 3rem auto; width: 90%; max-width: 800px; }
+  </style>
+</head>
+<body>
+
+<h1>Monkey Diary</h1>
+
+すこしずつ賢くしたい日記<br>
+powered by ykpythemind<br>
+<a href="https://github.com/ykpythemind/monkeydiary">source</a>
+
+<main>
+
+  <% target_files.each do |file| %>
+    <article>
+      <h2><%= file.datetime %></h2>
+      <%= ::File.read(file.path) %>
+    </article>
+  <% end %>
+</main>
+
+
+</body>
+</html>
