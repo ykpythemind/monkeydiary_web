@@ -18,6 +18,6 @@ task :serve => [:generate] do
   puts "listening... http://localhost:20080"
 end
 
-task :deploy do
+task :deploy => [:generate] do
   MonkeyDiary::Git.new('dist').execute
 end
